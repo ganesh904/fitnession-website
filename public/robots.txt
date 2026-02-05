@@ -1,0 +1,11 @@
+# Robots.txt for Fitnession
+# https://fitnession.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://fitnession.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
