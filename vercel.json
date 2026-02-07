@@ -3,6 +3,7 @@
   "outputDirectory": ".next",
   "framework": "nextjs",
   "regions": ["bom1"],
+  "cleanUrls": true,
   "headers": [
     {
       "source": "/(.*)",
