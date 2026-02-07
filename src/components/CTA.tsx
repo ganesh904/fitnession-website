@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Download, ArrowRight, CheckCircle } from 'lucide-react'
 
@@ -83,8 +84,14 @@ export default function CTA() {
                   <div className="bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19]">
                     <div className="h-full bg-gradient-to-b from-primary-50 to-white flex flex-col items-center justify-center p-6">
                       {/* App Icon */}
-                      <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-3xl flex items-center justify-center mb-4 shadow-lg">
-                        <span className="text-white font-bold text-3xl">F</span>
+                      <div className="w-20 h-20 mb-4 shadow-lg">
+                        <Image
+                          src="/assets/Main-app-icon.png"
+                          alt="Fitnession App Icon"
+                          width={80}
+                          height={80}
+                          className="w-full h-full object-contain rounded-3xl"
+                        />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">Fitnession</h3>
                       <p className="text-sm text-gray-500 text-center mb-6">

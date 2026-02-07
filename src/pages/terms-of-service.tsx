@@ -30,7 +30,7 @@ export default function TermsOfServicePage() {
                 Terms of Service
               </h1>
               <p className="text-gray-600">
-                Last updated: January 15, 2024
+                Last updated: February 7, 2026
               </p>
             </motion.div>
           </div>
@@ -63,23 +63,44 @@ export default function TermsOfServicePage() {
                   <li>Health condition-specific programs</li>
                 </ul>
 
-                <h2>3. User Accounts</h2>
-                <h3>3.1 Registration</h3>
+                <h2>3. Mobile App Permissions</h2>
+                <h3>3.1 Required Permissions</h3>
+                <p>
+                  Our mobile application requires certain permissions to function properly. By installing and using the app, you consent to these permissions:
+                </p>
+                <ul>
+                  <li><strong>Internet Access:</strong> Required for all app functionality including AI coaching, data sync, and updates</li>
+                </ul>
+
+                <h3>3.2 Optional Permissions</h3>
+                <p>
+                  The following permissions are optional and requested only when needed:
+                </p>
+                <ul>
+                  <li><strong>Camera:</strong> Used only when you choose to take profile photos or progress photos within the app. You can deny this permission and still use all other features.</li>
+                  <li><strong>Photo Library/Storage:</strong> Used only when you choose to upload photos from your device. You can deny this permission and still use all other features.</li>
+                </ul>
+                <p>
+                  You can manage these permissions at any time through your device settings. Denying optional permissions will not affect core app functionality.
+                </p>
+
+                <h2>4. User Accounts</h2>
+                <h3>4.1 Registration</h3>
                 <p>
                   To use certain features of our Service, you must register for an account. You agree to provide accurate, current, and complete information during registration and keep your account information updated.
                 </p>
 
-                <h3>3.2 Account Security</h3>
+                <h3>4.2 Account Security</h3>
                 <p>
                   You are responsible for safeguarding your account credentials and for all activities that occur under your account. You agree to notify us immediately of any unauthorized access to your account.
                 </p>
 
-                <h3>3.3 Account Termination</h3>
+                <h3>4.3 Account Termination</h3>
                 <p>
                   We reserve the right to suspend or terminate your account if you violate these Terms or engage in fraudulent or illegal activities.
                 </p>
 
-                <h2>4. Health Disclaimer</h2>
+                <h2>5. Health Disclaimer</h2>
                 <p className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
                   <strong>IMPORTANT:</strong> Fitnession is not a substitute for professional medical advice, diagnosis, or treatment. The information provided through our Service is for general informational purposes only.
                 </p>
@@ -90,40 +111,92 @@ export default function TermsOfServicePage() {
                   <li>Our AI coaches provide general guidance and are not licensed medical professionals</li>
                 </ul>
 
-                <h2>5. Subscription and Payments</h2>
-                <h3>5.1 Premium Plans</h3>
+                <h2>6. Subscription and Payments</h2>
+                <h3>6.1 Premium Plans</h3>
                 <p>
-                  Fitnession offers premium plans with additional features. By purchasing a premium plan, you agree to pay the fees indicated for your selected plan.
+                  Fitnession offers two premium plan types:
+                </p>
+                <ul>
+                  <li><strong>Smart Plan:</strong> AI-powered health coaching with personalized diet and workout plans (1, 3, 6, or 12-month durations)</li>
+                  <li><strong>Premium Plan:</strong> Everything in Smart Plan plus personal health coach with weekly calls (3, 6, or 12-month durations)</li>
+                </ul>
+                <p>
+                  By purchasing a premium plan, you agree to pay the fees indicated for your selected plan. All prices are listed in Indian Rupees (INR).
                 </p>
 
-                <h3>5.2 Payment Processing</h3>
+                <h3>6.2 Payment Processing</h3>
                 <p>
-                  Payments are processed through Google Play Store. All transactions are subject to Google Play's terms and conditions.
+                  Payments for Android users are processed exclusively through Google Play Store using Google Play Billing. Key points:
                 </p>
+                <ul>
+                  <li>All transactions are subject to Google Play's terms and conditions</li>
+                  <li>We do not store your payment information (credit card, UPI, etc.)</li>
+                  <li>Payments are verified server-side to prevent fraud</li>
+                  <li>You will receive a receipt from Google Play for each purchase</li>
+                  <li>Billing issues should be directed to Google Play support</li>
+                </ul>
 
-                <h3 id="refunds">5.3 Refund Policy</h3>
+                <h3>6.3 Subscription Duration and Access</h3>
+                <p>
+                  Premium features are available for the duration of your purchased plan:
+                </p>
+                <ul>
+                  <li>Access begins immediately upon successful purchase verification</li>
+                  <li>Plans are valid for the purchased duration (1, 3, 6, or 12 months)</li>
+                  <li>No automatic renewal - you choose when to purchase again</li>
+                  <li>Access expires at the end of your plan duration unless renewed</li>
+                </ul>
+
+                <h3 id="refunds">6.4 Refund Policy</h3>
                 <p>
                   Refunds are handled according to Google Play Store policies:
                 </p>
                 <ul>
-                  <li>You may request a refund within 48 hours of purchase through Google Play</li>
-                  <li>For refund requests after 48 hours, contact us at support@fitnession.com</li>
-                  <li>Refunds may be granted at our discretion based on the circumstances</li>
-                  <li>Refunds are not available for partially used subscription periods after 7 days</li>
+                  <li><strong>Within 48 hours:</strong> Request a refund directly through Google Play Store</li>
+                  <li><strong>After 48 hours:</strong> Contact us at support@fitnession.com with your order details</li>
+                  <li><strong>Eligibility:</strong> Refunds may be granted based on:
+                    <ul>
+                      <li>Technical issues preventing app usage</li>
+                      <li>Accidental purchases with proof</li>
+                      <li>Service not delivered as described</li>
+                    </ul>
+                  </li>
+                  <li><strong>Not eligible:</strong> Refunds are generally not available for:
+                    <ul>
+                      <li>Change of mind after 7 days of active use</li>
+                      <li>Partially used subscription periods after 7 days</li>
+                      <li>Failure to achieve personal health goals</li>
+                    </ul>
+                  </li>
+                  <li><strong>Processing time:</strong> Approved refunds are processed within 5-7 business days</li>
                 </ul>
-
-                <h3>5.4 Plan Changes</h3>
-                <p>
-                  We reserve the right to modify our pricing and plans. Any changes will be communicated to existing subscribers in advance and will not affect current subscription periods.
+                <p className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 mt-4">
+                  <strong>Note:</strong> Refund decisions are made at our sole discretion. We review each request on a case-by-case basis.
                 </p>
 
-                <h2>6. User Content</h2>
-                <h3>6.1 Your Content</h3>
+                <h3>6.5 Plan Changes and Pricing</h3>
+                <p>
+                  We reserve the right to modify our pricing and plans:
+                </p>
+                <ul>
+                  <li>Price changes do not affect active subscriptions</li>
+                  <li>New prices apply only to future purchases</li>
+                  <li>Material changes will be communicated 30 days in advance</li>
+                  <li>You can lock in current pricing by purchasing longer durations</li>
+                </ul>
+
+                <h3>6.6 Taxes</h3>
+                <p>
+                  All prices displayed are inclusive of applicable taxes (GST) as required by Indian law. Google Play handles tax calculation and collection.
+                </p>
+
+                <h2>7. User Content</h2>
+                <h3>7.1 Your Content</h3>
                 <p>
                   You retain ownership of any content you submit to the Service (including health data, photos, and feedback). By submitting content, you grant us a license to use, store, and process it to provide our services.
                 </p>
 
-                <h3>6.2 Prohibited Content</h3>
+                <h3>7.2 Prohibited Content</h3>
                 <p>You agree not to submit content that:</p>
                 <ul>
                   <li>Is false, misleading, or fraudulent</li>
@@ -133,12 +206,12 @@ export default function TermsOfServicePage() {
                   <li>Is offensive, abusive, or harmful</li>
                 </ul>
 
-                <h2>7. Intellectual Property</h2>
+                <h2>8. Intellectual Property</h2>
                 <p>
                   The Service and its original content (excluding user content), features, and functionality are owned by Fitnession and are protected by copyright, trademark, and other intellectual property laws.
                 </p>
 
-                <h2>8. Prohibited Uses</h2>
+                <h2>9. Prohibited Uses</h2>
                 <p>You agree not to:</p>
                 <ul>
                   <li>Use the Service for any unlawful purpose</li>
@@ -150,7 +223,7 @@ export default function TermsOfServicePage() {
                   <li>Share your account credentials with others</li>
                 </ul>
 
-                <h2>9. Limitation of Liability</h2>
+                <h2>10. Limitation of Liability</h2>
                 <p>
                   To the maximum extent permitted by law, Fitnession shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:
                 </p>
@@ -165,44 +238,44 @@ export default function TermsOfServicePage() {
                   Our total liability shall not exceed the amount you paid for the Service in the 12 months preceding the claim.
                 </p>
 
-                <h2>10. Indemnification</h2>
+                <h2>11. Indemnification</h2>
                 <p>
                   You agree to indemnify and hold harmless Fitnession and its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from your use of the Service or violation of these Terms.
                 </p>
 
-                <h2>11. Third-Party Services</h2>
+                <h2>12. Third-Party Services</h2>
                 <p>
                   Our Service may contain links to third-party websites or services. We are not responsible for the content, privacy policies, or practices of third-party services.
                 </p>
 
-                <h2>12. Modifications to Service</h2>
+                <h2>13. Modifications to Service</h2>
                 <p>
                   We reserve the right to modify, suspend, or discontinue the Service at any time without notice. We shall not be liable to you or any third party for any modification, suspension, or discontinuation.
                 </p>
 
-                <h2>13. Changes to Terms</h2>
+                <h2>14. Changes to Terms</h2>
                 <p>
                   We may revise these Terms at any time. By continuing to use the Service after changes become effective, you agree to be bound by the revised Terms. We will notify users of material changes via email or in-app notification.
                 </p>
 
-                <h2>14. Governing Law</h2>
+                <h2>15. Governing Law</h2>
                 <p>
                   These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions. Any disputes shall be subject to the exclusive jurisdiction of the courts in Bangalore, Karnataka, India.
                 </p>
 
-                <h2>15. Severability</h2>
+                <h2>16. Severability</h2>
                 <p>
                   If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.
                 </p>
 
-                <h2>16. Contact Information</h2>
+                <h2>17. Contact Information</h2>
                 <p>For questions about these Terms, please contact us:</p>
                 <ul>
                   <li><strong>Email:</strong> support@fitnession.com</li>
                   <li><strong>Website:</strong> https://fitnession.com</li>
                 </ul>
 
-                <h2>17. Entire Agreement</h2>
+                <h2>18. Entire Agreement</h2>
                 <p>
                   These Terms, together with our Privacy Policy, constitute the entire agreement between you and Fitnession regarding the use of the Service.
                 </p>
