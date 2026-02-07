@@ -1,9 +1,8 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
   "framework": "nextjs",
-  "regions": ["bom1"],
-  "cleanUrls": true,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
   "headers": [
     {
       "source": "/(.*)",
@@ -15,28 +14,8 @@
         {
           "key": "X-Frame-Options",
           "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
         }
       ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/privacy",
-      "destination": "/privacy-policy",
-      "permanent": true
-    },
-    {
-      "source": "/terms",
-      "destination": "/terms-of-service",
-      "permanent": true
     }
   ]
 }
