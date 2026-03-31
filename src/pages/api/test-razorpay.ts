@@ -10,9 +10,13 @@ export default async function handler(
     const keySecret = process.env.RAZORPAY_KEY_SECRET
 
     console.log('Environment check:', {
-      keyId: keyId ? `${keyId.substring(0, 10)}...` : 'MISSING',
-      keySecret: keySecret ? 'SET' : 'MISSING',
+      keyId: keyId ? `${keyId.substring(0, 15)}... (${keyId.length} chars)` : 'MISSING',
+      keySecret: keySecret ? `SET (${keySecret.length} chars)` : 'MISSING',
     })
+
+    // Check for whitespace or encoding issues
+    if (keyId) console.log('KeyID trimmed:', keyId.trim() === keyId)
+    if (keySecret) console.log('Secret trimmed:', keySecret.trim() === keySecret)
 
     if (!keyId || !keySecret) {
       return res.status(500).json({
