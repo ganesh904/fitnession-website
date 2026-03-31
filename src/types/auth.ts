@@ -1,8 +1,8 @@
 import { User, Session } from '@supabase/supabase-js'
 
-export interface AuthUser extends User {
+export interface AuthUser extends Omit<User, 'user_metadata'> {
   email?: string
-  user_metadata?: {
+  user_metadata: {
     full_name?: string
     avatar_url?: string
   }

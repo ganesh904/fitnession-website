@@ -31,7 +31,7 @@ export default function PlanCard({
           : 'shadow-lg hover:shadow-xl hover:scale-102'
       }`}
       style={{
-        ringColor: isSelected ? tierInfo.color : 'transparent',
+        ...(isSelected && { '--tw-ring-color': tierInfo.color } as React.CSSProperties),
       }}
     >
       {/* Badges */}

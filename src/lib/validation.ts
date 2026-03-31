@@ -91,6 +91,6 @@ export function getPasswordStrength(password: string): {
 
 // Helper to get error message from Zod error
 export function getErrorMessage(error: z.ZodError, field: string): string | undefined {
-  const fieldError = error.errors.find((e) => e.path[0] === field)
+  const fieldError = error.issues.find((e) => e.path[0] === field)
   return fieldError?.message
 }
