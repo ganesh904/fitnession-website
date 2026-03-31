@@ -106,12 +106,10 @@ export default function PlanCard({
               amount={plan.totalPrice}
             />
           ) : (
-            <a
-              href="/login?redirect=/premium"
-              className="block w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 rounded-xl font-bold text-lg text-center hover:from-primary-700 hover:to-primary-800 transition-all shadow-lg hover:shadow-xl"
-            >
-              Login to Continue
-            </a>
+            <div className="w-full bg-gray-100 border-2 border-gray-300 text-gray-700 py-4 px-3 rounded-xl text-center">
+              <p className="font-semibold mb-1">📱 Open from Mobile App</p>
+              <p className="text-xs">This page should be accessed from the Fitnession mobile app</p>
+            </div>
           )}
         </div>
       ) : (
