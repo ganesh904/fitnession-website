@@ -9,6 +9,7 @@ import { Menu, X, Download } from 'lucide-react'
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Features', href: '/#features' },
+  { name: 'Premium', href: '/premium' },
   { name: 'Blog', href: '/blog' },
   { name: 'Success Stories', href: '/success-stories' },
 ]
@@ -60,17 +61,20 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="https://play.google.com/store"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary flex items-center space-x-2"
+            <Link
+              href="/login"
+              className="text-gray-700 hover:text-primary-500 font-medium transition-colors"
             >
-              <Download size={18} />
-              <span>Get App</span>
-            </a>
+              Login
+            </Link>
+            <Link
+              href="/signup"
+              className="bg-primary-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+            >
+              Sign Up
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -100,15 +104,22 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
-            <a
-              href="https://play.google.com/store"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary w-full mt-4 flex items-center justify-center space-x-2"
-            >
-              <Download size={18} />
-              <span>Get App</span>
-            </a>
+            <div className="flex space-x-2 mt-4">
+              <Link
+                href="/login"
+                className="flex-1 py-3 text-center border-2 border-primary-600 text-primary-600 rounded-lg font-semibold hover:bg-primary-50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Login
+              </Link>
+              <Link
+                href="/signup"
+                className="flex-1 py-3 text-center bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Sign Up
+              </Link>
+            </div>
           </motion.div>
         )}
       </div>
