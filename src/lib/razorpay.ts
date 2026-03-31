@@ -1,20 +1,20 @@
 import Razorpay from 'razorpay'
 import crypto from 'crypto'
 
-const razorpayKeyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!
-const razorpayKeySecret = process.env.RAZORPAY_KEY_SECRET!
+// Get Razorpay instance (lazy initialization)
+function getRazorpayInstance() {
+  const keyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID
+  const keySecret = process.env.RAZORPAY_KEY_SECRET
 
-if (!razorpayKeyId || !razorpayKeySecret) {
-  console.warn(
-    'Missing Razorpay environment variables. Payment functionality will not work.'
-  )
+  if (!keyId || !keySecret) {
+    throw new Error('Razorpay credentials not configured')
+  }
+
+  return new Razorpay({
+    key_id: keyId,
+    key_secret: keySecret,
+  })
 }
-
-// Initialize Razorpay instance (server-side only)
-export const razorpay = new Razorpay({
-  key_id: razorpayKeyId,
-  key_secret: razorpayKeySecret,
-})
 
 /**
  * Create a Razorpay order
@@ -25,11 +25,9 @@ export async function createRazorpayOrder(
   receipt: string
 ) {
   try {
+    const razorpay = getRazorpayInstance()
+
     console.log('Creating Razorpay order:', { amount, currency, receipt })
-    console.log('Razorpay keys:', {
-      keyId: razorpayKeyId ? 'SET' : 'MISSING',
-      keySecret: razorpayKeySecret ? 'SET' : 'MISSING'
-    })
 
     const order = await razorpay.orders.create({
       amount: amount * 100, // Convert to paise
@@ -40,16 +38,11 @@ export async function createRazorpayOrder(
       },
     })
 
-    console.log('Razorpay order created:', order.id)
+    console.log('Razorpay order created successfully:', order.id)
     return order
   } catch (error: any) {
-    console.error('Razorpay error details:', {
-      message: error.message,
-      description: error.description,
-      statusCode: error.statusCode,
-      error: error.error
-    })
-    throw new Error(`Failed to create payment order: ${error.message || error.description || 'Unknown error'}`)
+    console.error('Razorpay error:', error)
+    throw new Error(`Razorpay order failed: ${error.message || 'Unknown error'}`)
   }
 }
 
@@ -63,9 +56,14 @@ export function verifyRazorpaySignature(
   signature: string
 ): boolean {
   try {
+    const keySecret = process.env.RAZORPAY_KEY_SECRET
+    if (!keySecret) {
+      throw new Error('Razorpay secret not configured')
+    }
+
     const text = `${orderId}|${paymentId}`
     const generated = crypto
-      .createHmac('sha256', razorpayKeySecret)
+      .createHmac('sha256', keySecret)
       .update(text)
       .digest('hex')
 
@@ -81,6 +79,7 @@ export function verifyRazorpaySignature(
  */
 export async function getPaymentDetails(paymentId: string) {
   try {
+    const razorpay = getRazorpayInstance()
     const payment = await razorpay.payments.fetch(paymentId)
     return payment
   } catch (error) {
@@ -97,6 +96,7 @@ export async function refundPayment(
   amount?: number
 ) {
   try {
+    const razorpay = getRazorpayInstance()
     const refund = await razorpay.payments.refund(paymentId, {
       amount: amount ? amount * 100 : undefined, // Convert to paise if specified
     })
@@ -111,7 +111,7 @@ export async function refundPayment(
  * Get Razorpay public key for frontend
  */
 export function getRazorpayKeyId(): string {
-  return razorpayKeyId
+  return process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || ''
 }
 
 /**
