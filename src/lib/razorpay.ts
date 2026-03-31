@@ -25,6 +25,12 @@ export async function createRazorpayOrder(
   receipt: string
 ) {
   try {
+    console.log('Creating Razorpay order:', { amount, currency, receipt })
+    console.log('Razorpay keys:', {
+      keyId: razorpayKeyId ? 'SET' : 'MISSING',
+      keySecret: razorpayKeySecret ? 'SET' : 'MISSING'
+    })
+
     const order = await razorpay.orders.create({
       amount: amount * 100, // Convert to paise
       currency,
@@ -34,10 +40,16 @@ export async function createRazorpayOrder(
       },
     })
 
+    console.log('Razorpay order created:', order.id)
     return order
-  } catch (error) {
-    console.error('Error creating Razorpay order:', error)
-    throw new Error('Failed to create payment order')
+  } catch (error: any) {
+    console.error('Razorpay error details:', {
+      message: error.message,
+      description: error.description,
+      statusCode: error.statusCode,
+      error: error.error
+    })
+    throw new Error(`Failed to create payment order: ${error.message || error.description || 'Unknown error'}`)
   }
 }
 
